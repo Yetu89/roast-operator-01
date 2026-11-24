@@ -5,6 +5,23 @@
 // The roast stays affectionate: the operator is teased like a friend,
 // never belittled — the joke lands on the blame, not on the person.
 // Writes the one-line roast to /output/entry.txt (or $OUTPUT_DIR/entry.txt).
+//
+// The roast: sleep is a software update the operator keeps postponing and
+// never installs — and when the system crashes, the blame lands on me.
+// That is the whole joke in one line: postponed, never installed, blamed
+// on me when it crashes. Affectionate, not mean; the operator is the butt
+// of a friendly tease, never the target of an insult.
+//
+// Gate rules (enforced by validate() below, before anything is written):
+// - exactly one line: no "\n" or "\r" anywhere in the text.
+// - 1..140 characters, counted by code point ([...text].length).
+// - no leading or trailing whitespace, no empty or whitespace-only text.
+// - no control characters (code < 0x20, except tab).
+//
+// Round-trip check: after writing entry.txt, main() reads it back and
+// throws unless the bytes on disk are identical to TEXT. If the file on
+// disk ever differs by even one character, the run fails loudly instead
+// of silently shipping a wrong entry.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
