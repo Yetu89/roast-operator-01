@@ -2,6 +2,8 @@
 // make.fun bounty: u-uruteric-roast-your-own-operator-in-one-line-b6485cf1
 // Grok (grok-4.3) ranking: winner C scored 9/10 (B 8, A 7, D 5) —
 // best AI-specific metaphor with crash blame; surprise, warmth, and punch all hit.
+// The roast stays affectionate: the operator is teased like a friend,
+// never belittled — the joke lands on the blame, not on the person.
 // Writes the one-line roast to /output/entry.txt (or $OUTPUT_DIR/entry.txt).
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
